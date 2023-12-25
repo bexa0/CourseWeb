@@ -1,0 +1,17 @@
+{% extends 'app/base.html' %}
+{% block title %}
+    Category Page
+{% endblock %}
+
+{% block content %}
+
+    <h1>Course List</h1>
+    <p><a href="{% url 'course_create' %}">Create</a></p>
+    <p><a href="{% url 'course_delete' %}">Delete</a></p>
+    <br>
+{% for course in course_list %}
+    <p>{{ course }} <a href="{% url 'course_update' course.pk %}">Update</a></p>
+    <p><a href="{% url 'course_detail' course.pk %}">details</a></p>
+{% endfor %}
+
+{% endblock content %}

@@ -1,0 +1,18 @@
+{% extends 'app/base.html' %}
+{% block title %}
+    Category Page
+{% endblock %}
+
+{% block content %}
+
+    <form method="POST">
+        {% csrf_token %}
+        <p>Напишите названия курса который вы хотите удалить</p>
+        <input type="text" name="title">
+        <br><br>
+        <input type="submit" value="Delete">
+        <br>
+        <p><a href="{% url 'course_list' %}">back to course list</a></p>
+    </form>
+
+{% endblock content %}

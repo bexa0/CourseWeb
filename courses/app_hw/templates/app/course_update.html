@@ -1,0 +1,16 @@
+{% extends 'app/base.html' %}
+{% block title %}
+    Category Page
+{% endblock %}
+
+{% block content %}
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Update</button>
+        <br>
+        <p><a href="{% url 'course_list' %}">back to course list</a></p>
+    </form>
+
+{% endblock content %}

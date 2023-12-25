@@ -1,0 +1,21 @@
+{% extends 'app/base.html' %}
+{% block title %}
+    Category Page
+{% endblock %}
+
+{% block content %}
+
+    <h1>Course:{{ course.title }}</h1>
+    <p>{{ course.title }}</p>
+    <p>{{ course.description }}</p>
+    <p>{{ course.average_time }}</p>
+    <br>
+
+    {% for module in module_list %}
+        <p>{{ module }}</p>
+        <p><a href="{% url 'module_list' %}">details</a></p>
+    {% endfor %}
+
+    <h3><a href="{% url 'course_list' %}">back to course list</a></h3>
+
+{% endblock content %}

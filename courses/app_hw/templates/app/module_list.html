@@ -1,0 +1,17 @@
+{% extends 'app/base.html' %}
+{% block title %}
+    Category Page
+{% endblock %}
+
+{% block content %}
+
+    <h1>Module List</h1>
+    <p><a href="{% url 'module_create' %}">Create</a></p>
+    <p><a href="{% url 'module_delete' %}">Delete</a></p>
+    <br>
+{% for module in module_list %}
+    <p>{{ module }} <a href="{% url 'module_update' module.pk %}">Update</a></p>
+    <p><a href="{% url 'module_detail' module.pk %}">details</a></p>
+{% endfor %}
+
+{% endblock content %}
